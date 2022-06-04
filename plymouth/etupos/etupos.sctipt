@@ -1,0 +1,17 @@
+flower_image=Image("background.png")
+screen_ratio = Window.GetHeight() / Window.GetWidth();
+flower_image_ratio = flower_image.GetHeight() / flower_image.GetWidth();
+if (screen_ratio > flower_image_ratio)
+{  # 画面の縦横比が画像の縦横比より大きく縦方向に長い場合、画面の高さの方に合わせる
+scale_factor =  Window.GetHeight() / flower_image.GetHeight();
+}
+else
+{  # 画面の縦横比が画像の縦横比より小さく横方向に長い場合、画面の幅の方に合わせる
+scale_factor =  Window.GetWidth() / flower_image.GetWidth();
+}
+scaled_flower_image = flower_image.Scale(flower_image.GetWidth()  * scale_factor,
+flower_image.GetHeight() * scale_factor);
+flower_sprite = Sprite(scaled_flower_image); # 大きさ変更した画像を利用してスプライトを作成
+flower_sprite.SetX(Window.GetWidth()  / 2 – scaled_flower_image.GetWidth()  / 2); # 中央に配置
+flower_sprite.SetY(Window.GetHeight() / 2 – scaled_flower_image.GetHeight() / 2);
+flower_sprite.SetZ(-10000); # 一番後ろに配置

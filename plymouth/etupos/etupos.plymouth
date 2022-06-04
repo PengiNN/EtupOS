@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=EtupOS_Boot_Splash
+Description=EtupOS boot splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/etupos/
+ScriptFile=/usr/share/plymouth/themes/etupos/etupos.script
